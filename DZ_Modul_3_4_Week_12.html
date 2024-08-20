@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+    <style>
+        input[type="button"]{
+            width: 40px;
+            height: 40px;
+            margin: -3px;           
+        }
+        div{
+            background-color: rgb(167, 167, 211);
+            height: 100px;
+            vertical-align: top;
+        }
+        ul{
+             display: inline-block;
+             color: white;
+             
+        }
+        li{           
+            list-style-type: none;
+            padding: 10px 10px;
+            width: 150px;        
+        }
+        .dropdown {
+  display: none;
+  position: absolute;
+  width: 130px;
+  height: auto;
+  background-color: rgb(167, 167, 211);
+  margin-left: -10px;
+
+}
+.dropdown li {
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+.dropdown li:hover {
+  background-color: rgb(52, 52, 134);
+  margin-left: -40px;
+  width: 138px;
+}
+
+.active {
+  background-color: rgb(52, 52, 134); /* or your desired highlight color */
+}
+    
+    </style>
+</head>
+<body>
+    <!-- Задание №2 -->
+   <!-- <p id="text" onselectstart="return false" onpaste="return false;" onCopy="return false" onCut="return false" onDrag="return false" onDrop="return false">
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit.<br/>
+    Eveniet, aut harum unde debitis vitae iste quisquam delectus<br/>
+    dignissimos perspiciatis inventore expedita tenetur adipisci nobis<br/>
+    non nesciunt, numquam nostrum. Est, soluta.
+    </p>
+    
+    <img style="display: none;" src="/Visual Studio/HomeWork/pictures/Снимок Контекстное меню.jpg" alt="" id="myImage"/> -->
+    
+    <!-- Задание №4 -->
+
+    <!-- <input style="margin-left: -3px; 
+    margin-bottom: 10px; width: 150px ; height: 20px;" type="text" id="calc" />
+    <div class="row1">
+    <input type="button" id="button7" value="7">
+    <input type="button" id="button8" value="8">
+    <input type="button" id="button9" value="9">
+    <input type="button" id="buttonPlus" value="+">
+    </div>
+    <div class="row2">
+    <input type="button" id="button4" value="4">
+    <input type="button" id="button5" value="5">
+    <input type="button" id="button6" value="6">
+    <input type="button" id="buttonMinus" value="-">
+    </div>
+    <div class="row3">
+    <input type="button" id="button1" value="1">
+    <input type="button" id="button2" value="2">
+    <input type="button" id="button3" value="3">
+    <input type="button" id="buttonMultiply" value="*">
+    </div>
+    <div class="row4">
+    <input type="button" id="button" value="0">
+    <input style="width: 78px;" type="button" id="buttonEquals" value="=">
+    <input type="button" id="buttonDivide" value="/">
+    </div> -->
+
+
+        <!-- Задание №5 -->
+        <!-- <div id="list">
+        <ul id="home">
+            <li class="firstColumn">
+                Home
+            </li>
+            <li>
+                Personal account
+            </li>
+            <li>
+                Favorite models
+            </li>
+            <li>
+                Tender
+            </li>
+            <li>
+                Sale
+            </li>
+        </ul>
+        <ul id="categories">
+            <li class="secondColumn">
+                Categories
+            </li>
+            <li>
+                Dresses
+            </li>
+            <li>
+                Shirts
+            </li>
+            <li>
+                Jeans
+            </li>
+            <li>
+                Shoes
+            </li>
+        </ul>
+        <ul id="about">
+            <li class="thirdColumn">
+                About
+            </li>
+            <li>
+                About us
+            </li>
+        </ul>
+        <ul id="contact">
+            <li class="fourthColumn">
+                Contact
+            </li>
+            <li>
+                Fone
+            </li>
+            <li>
+                E-mail
+            </li>
+            <li>
+                Your helper
+            </li>
+        </ul>
+    </div> -->
+    <div id="list">
+        <ul id="home">
+            <li class="firstColumn">
+                Home
+                <ul class="dropdown">
+                    <li>Personal account</li>
+                    <li>Favorite models</li>
+                    <li>Tender</li>
+                    <li>Sale</li>
+                </ul>
+            </li>
+        </ul>
+        <ul id="categories">
+            <li class="secondColumn">
+                Categories
+                <ul class="dropdown">
+                    <li>Dresses</li>
+                    <li>Shirts</li>
+                    <li>Jeans</li>
+                    <li>Shoes</li>
+                </ul>
+            </li>
+        </ul>
+        <ul id="about">
+            <li class="thirdColumn">
+                About
+                <ul class="dropdown">
+                    <li>About us</li>
+                </ul>
+            </li>
+        </ul>
+        <ul id="contact">
+            <li class="fourthColumn">
+                Contact
+                <ul class="dropdown">
+                    <li>Fone</li>
+                    <li>E-mail</li>
+                    <li>Your helper</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <script>
+        // К заданию №2
+    //     let myImage = document.getElementById("myImage");
+    //     let myText = document.getElementById("text");
+    //     let hidden = true;
+
+    //     myText.oncontextmenu = function(event) {
+    //     event.preventDefault();
+    //     if (myImage.style.display === "none") {
+    //     myImage.style.display = "block";
+    //     } else {
+    //     myImage.style.display = "none";
+    //     }
+    //  };
+    
+
+        //К заданию №4
+//         let calcInput = document.getElementById("calc");
+// let buttons = document.querySelectorAll("input[type='button']");
+
+// let currentInput = ""; 
+// let operator = null; 
+// let firstNumber = null; 
+
+// buttons.forEach(button => {
+//   button.addEventListener("click", () => {
+//     const buttonValue = button.value;
+
+//     if (buttonValue === "+" || buttonValue === "-" || buttonValue === "*" || buttonValue === "/") {
+     
+//       if (operator !== null) {
+//         calculate();
+//       }
+
+//       operator = buttonValue;
+//       firstNumber = parseFloat(currentInput);
+//       currentInput = ""; 
+//       calcInput.value += buttonValue;
+//     } else if (buttonValue === "=") {
+      
+//       calcInput.value += "="; 
+//       calculate(); 
+//       calcInput.value += " " + result; 
+//     } else {
+      
+//       currentInput += buttonValue;
+//       calcInput.value += buttonValue;
+//     }
+//     });
+//     });
+//     let result = "";
+//     function calculate() {
+   
+//     const secondNumber = parseFloat(currentInput); 
+
+//     switch (operator) {
+//     case "+":
+//       result = firstNumber + secondNumber;
+//       break;
+//     case "-":
+//       result = firstNumber - secondNumber;
+//       break;
+//     case "*":
+//       result = firstNumber * secondNumber;
+//       break;
+//     case "/":
+//       if (secondNumber === 0) {
+//         result = "Ошибка"; 
+//       } else {
+//         result = firstNumber / secondNumber;
+//       }
+//       break;
+//   }
+
+
+//   currentInput = "";
+//   operator = null;
+//   firstNumber = null;
+// }
+
+    // К заданию №5
+    const listItems = document.querySelectorAll('li');
+
+    listItems.forEach(item => {
+    const dropdown = item.querySelector('.dropdown'); 
+    if (dropdown) {
+    item.addEventListener('mouseover', () => {
+      item.classList.add('active'); 
+      dropdown.style.display = 'block';
+    });
+    item.addEventListener('mouseout', () => {
+      item.classList.remove('active');
+      dropdown.style.display = 'none';
+    });
+  }
+    });
+    const dropdowns = document.querySelectorAll('.dropdown');
+
+    dropdowns.forEach(dropdown => {
+    dropdown.addEventListener('mouseover', () => {
+    dropdown.parentElement.classList.add('active'); 
+    dropdown.style.display = 'block';
+  });
+    dropdown.addEventListener('mouseout', () => {
+    dropdown.parentElement.classList.remove('active');
+    dropdown.style.display = 'none';
+  });
+});
+
+
+    </script>
+</body>
+</html>
